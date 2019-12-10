@@ -783,8 +783,8 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
     private File createImageFile() throws IOException {
 
         String imageFileName = "image-" + UUID.randomUUID().toString();
-        File path = Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_PICTURES);
+//        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        File path = new File(getTmpDir(getCurrentActivity()));
 
         if (!path.exists() && !path.isDirectory()) {
             path.mkdirs();
@@ -802,8 +802,8 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
     private File createVideoFile() throws IOException {
 
         String videoFileName = "video-" + UUID.randomUUID().toString();
-        File path = Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_PICTURES);
+//        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        File path = new File(getTmpDir(getCurrentActivity()));
 
         if (!path.exists() && !path.isDirectory()) {
             path.mkdirs();
